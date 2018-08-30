@@ -1,3 +1,7 @@
+---
+pagetitle: Aula 8
+---
+
 # Recursão
 
 Quinta, 30 de agosto
@@ -183,9 +187,11 @@ Podemos mover os n discos com $2^n-1$ movimentos.
 
 **Prova:**
 $$
-n = 0 \\
-2^n - 1 + 1 + 2^{n-1}-1 \\
-2\cdot 2^n - 1
+\begin{aligned}
+n &= 0 \\
+\text{Movimentos} &= 2^n - 1 + 1 + 2^{n-1}-1 \\
+&= 2\cdot 2^n - 1
+\end{aligned}
 $$
 
 ## Curvas de Hilbert
