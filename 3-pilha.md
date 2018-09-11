@@ -24,16 +24,16 @@ Funções:
 
 1. ```c
    #define MAX 1000
-   
+
    // implementação com vetor estático
    typedef struct {
        char v[MAX];
        int topo;
    } pilha
    typedef pilha *Pilha;
-   
+
    int PilhaVazia(pilha P) {
-   	return P.topo == 0;
+      return P.topo == 0;
    }
    void Empilha(Pilha P, char d) {
        if (P->topo == MAX) {
@@ -57,7 +57,7 @@ Funções:
        }
        return (P->v[P->topo -1])
    }
-   
+
    // vetor dinâmico
    Pilha CriaPilha() {
        Pilha P = malloc(sizeof(pilha));
@@ -74,16 +74,17 @@ Funções:
        P->v=novo;
    }
    ```
+
    ```C
    int bemFormada(char seq[]) {
        int ok = 1, i;
        Pilha P = CriaPilha(1000);
-       for (i=0; seq[i] != '\0'; i++) 
-   	    if (seq[i] = '(' || seq[i] == '[' || seq[i] == '{')
-   	    	Empilha(P, seq[i]);
-       	else {
+       for (i=0; seq[i] != '\0'; i++)
+        if (seq[i] = '(' || seq[i] == '[' || seq[i] == '{')
+            Empilha(P, seq[i]);
+        else {
                if (PilhaVazia(P)) ok = 0;
-   		    else {
+            else {
                    c = TopoDaPilha(P);
                    if (casa(c, seq[i]))
                        Desempilha(P);
@@ -91,12 +92,12 @@ Funções:
                        ok = 0;
                }
            }
-       	ok = (ok && PilhaVazia(P));
-       	DestroiPilha(P);
-       	return ok;
+        ok = (ok && PilhaVazia(P));
+        DestroiPilha(P);
+        return ok;
        }
    }
-   
+
    int casa(char c1, char c2) {
        if ((c1 == '(' && c2 == ')') ||
            (c1 == '[' && c2 == ']') ||
@@ -107,19 +108,20 @@ Funções:
    }
    ```
 
-   # Análise Assintótica
+# Análise Assintótica
 
-   Dizemos que:
-   $$
-   f(n)=O(g(n))
-   $$
-   se existem $c, n_0 > 0$ tais que:
-   $$
-   f(n) \le c\cdot g(n) \quad \forall n \ge n_0
-   $$
-   Ex.:
+Dizemos que:
 
-   -   $f(n) = 1000000n$ é $O(n)$
-   -   $f(n) = n^2 + 10000n$ é $O(n^2)$
-   -   $f(n) = n + 1$ 
+$$
+f(n)=O(g(n))
+$$
+se existem $c, n_0 > 0$ tais que:
+$$
+f(n) \le c\cdot g(n) \quad \forall n \ge n_0
+$$
+
+Ex.:
+- $f(n) = 1000000n$ é $O(n)$
+- $f(n) = n^2 + 10000n$ é $O(n^2)$
+- $f(n) = n + 1$
 
