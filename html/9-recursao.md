@@ -138,8 +138,10 @@ $$
  &= \dfrac{1}{n}(1+2+\ldots+n) \\
  &= \dfrac{1}{n}\left(\dfrac{(n+1)n}{2}\right) \\
  &= \dfrac{n+1}{2}
+ 
 \end{aligned}
 $$
+
 
 
 ## Busca binária

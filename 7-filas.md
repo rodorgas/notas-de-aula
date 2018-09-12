@@ -4,7 +4,7 @@ Terça, 28 de agosto
 
 Problema: do ratinho, agora com filas
 
-![implementacao](/Users/rodrigoorem/Desktop/implementacao.png)
+![implementacao](arquivos/implementacao.png)
 
 Ideia: a partir da posicao do rato vamos numerando os vizinhos e colando numa fila. Dijkstra
 
