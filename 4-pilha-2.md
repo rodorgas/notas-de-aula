@@ -41,44 +41,48 @@ int prec(char c) {
 }
 
 void posfixa(char expr[]) {
-    Pilha p = CriaPilha(;
+    Pilha p = CriaPilha(100);
     int i;
     for (i=0; expr[i] != '\0'; i++) {
         if (expr[i] == '(')
             Empilha(P, expr[i]);
         else if (expr[i] == ')') {
             c = TopoDaPilha(P);
-            while (c != '()') {
+            while (c != '(') {
                 printf("%c", c);
                 Desempilha(P);
                 c = TopoDaPilha(P);
             }
             Desempilha(P);
+        }
         else if (operador(expr[i])) {
-            if (PilaVazia(P)) Empilha(P, expr[i]);
+            if (PilhaVazia(P)) Empilha(P, expr[i]);
             else {
                 c = TopoDaPilha(P);
                 while (prec(c) >= prec(expr[i]) && !PilhaVazia(P)) {
-                    printf("%c"< c);
+                    printf("%c", c);
                     Desempilha(P));
-                    if (!PilhaVazia(P)) c = TopoDaPilha(P));
+                    if (!PilhaVazia(P)) c = TopoDaPilha(P);
                 }
                 Empilha(P, expr[i]);
             }
         }
-        else printf("%c", expr[i]);
-        while (!PilhaVazia(P)) {
-            printf("%c", TopoDaPilha(P));
-            Desempilha(P);
-        }
+        else
+            printf("%c", expr[i]);
+
+    }
+    while (!PilhaVazia(P)) {
+        printf("%c", TopoDaPilha(P));
+        Desempilha(P);
     }
 
-    printf("%s", posfixa(expr));    
+    printf("\n"));
 }
 
 int main() {
-    char expr[] = "";
+    char expr[] = "(A+B*C)+D*E/(F-G+H*I)-D";
     posfixa(expr);
+    return 0;
 }
 ```
 
