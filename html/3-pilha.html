@@ -109,7 +109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw">typedef</span> pilha *Pilha;</a>
 <a class="sourceLine" id="cb1-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb1-10" data-line-number="10"><span class="dt">int</span> PilhaVazia(pilha P) {</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"> <span class="cf">return</span> P.topo == <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">   <span class="cf">return</span> P.topo == <span class="dv">0</span>;</a>
 <a class="sourceLine" id="cb1-12" data-line-number="12">}</a>
 <a class="sourceLine" id="cb1-13" data-line-number="13"><span class="dt">void</span> Empilha(Pilha P, <span class="dt">char</span> d) {</a>
 <a class="sourceLine" id="cb1-14" data-line-number="14">    <span class="cf">if</span> (P-&gt;topo == MAX) {</a>
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="dt">int</span> bemFormada(<span class="dt">char</span> seq[]) {</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="dt">int</span> ok = <span class="dv">1</span>, i;</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">    Pilha P = CriaPilha(<span class="dv">1000</span>);</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="cf">for</span> (i=<span class="dv">0</span>; seq[i] != &#39;\<span class="dv">0</span>&#39;; i++) </a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="cf">for</span> (i=<span class="dv">0</span>; seq[i] != &#39;\<span class="dv">0</span>&#39;; i++)</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5">     <span class="cf">if</span> (seq[i] = <span class="ch">&#39;(&#39;</span> || seq[i] == <span class="ch">&#39;[&#39;</span> || seq[i] == <span class="ch">&#39;{&#39;</span>)</a>
 <a class="sourceLine" id="cb2-6" data-line-number="6">         Empilha(P, seq[i]);</a>
 <a class="sourceLine" id="cb2-7" data-line-number="7">     <span class="cf">else</span> {</a>
@@ -178,18 +178,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-27" data-line-number="27">        <span class="co">// casou</span></a>
 <a class="sourceLine" id="cb2-28" data-line-number="28">        <span class="cf">return</span> <span class="dv">1</span>;</a>
 <a class="sourceLine" id="cb2-29" data-line-number="29">    <span class="cf">return</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30">}</a></code></pre></div>
+<a class="sourceLine" id="cb2-30" data-line-number="30">}</a></code></pre></div></li>
+</ol>
 <h1 id="análise-assintótica">Análise Assintótica</h1>
-<p>Dizemos que: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+<p>Dizemos que:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
 f(n)=O(g(n))
 </annotation></semantics></math> se existem <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>,</mo><msub><mi>n</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c, n_0 &gt; 0</annotation></semantics></math> tais que: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>c</mi><mo>⋅</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mspace width="1.0em"></mspace><mo>∀</mo><mi>n</mi><mo>≥</mo><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">
 f(n) \le c\cdot g(n) \quad \forall n \ge n_0
-</annotation></semantics></math> Ex.:</p>
-<ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1000000</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">f(n) = 1000000n</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>10000</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">f(n) = n^2 + 10000n</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(n) = n + 1</annotation></semantics></math></li>
-</ul></li>
-</ol>
+</annotation></semantics></math></p>
+<p>Ex.: - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1000000</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">f(n) = 1000000n</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math> - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>10000</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">f(n) = n^2 + 10000n</annotation></semantics></math> é <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math> - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(n) = n + 1</annotation></semantics></math></p>
 </body>
 </html>

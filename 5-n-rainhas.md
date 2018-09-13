@@ -23,7 +23,7 @@ A estratégia que usaremos será backtrack: tentativa e erro implementada numa p
 void nRainhas(int n) {
     Pilha pos = CriaPilha(n);
     int **tab, i, j, atual, col, temsol = 1;
-    
+
     tab = malloc(n*sizeof(int *));
     for (i=0; i<n; i++)) {
         tab[i] = malloc(n*sizeof(int));
@@ -57,12 +57,12 @@ void nRainhas(int n) {
                 }
             }
         }
-        
+
         if (temsol == 1)
             imprimeMatriz(tab, n, m);
         else
             printf("Não tem solução\n");
-        
+
         DestroiPilha(pos);
         for (i = 0; i < n; i++)
             free(tab[i]);
@@ -89,7 +89,7 @@ void nRainhas(int n) {
     Pilha pos = CriaPilha(n);
     int **tab, i, j, pulos, temsol = 1;
     PuloDoCavalo atual;
-    
+
     tab = malloc(n*sizeof(int *));
     for (i=0; i<n; i++)) {
         tab[i] = malloc(n*sizeof(int));
@@ -106,7 +106,7 @@ void nRainhas(int n) {
                 atual.mov++;
             if (ok == 1) {
                 Empilha(pos, atual);
-				tab[atual.linha][atual.col] = pulos;
+                tab[atual.linha][atual.col] = pulos;
                 atual = proxima(atual);
             }
             else { //backtrack
@@ -121,12 +121,12 @@ void nRainhas(int n) {
                 }
             }
         }
-        
+
         if (temsol == 1)
             imprimeMatriz(tab, n, m);
         else
             printf("Não tem solução\n");
-        
+
         DestroiPilha(pos);
         for (i = 0; i < n; i++)
             free(tab[i]);
@@ -134,11 +134,3 @@ void nRainhas(int n) {
     }
 }
 ```
-
-
-
-
-
-@russo7
-
-gabrielrcarmo@gmail.com

@@ -86,3 +86,8 @@ int main() {
 }
 ```
 
+Anexos:
+
+- [postfix.c](arquivos/postfix.c)
+- [queue.c](arquivos/queue.c)
+- [stack.c](arquivos/stack.c)

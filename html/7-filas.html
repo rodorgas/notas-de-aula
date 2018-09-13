@@ -84,7 +84,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Terça, 28 de agosto</p>
 <p>Problema: do ratinho, agora com filas</p>
 <figure>
-<img src="implementacao.png" alt="implementacao" /><figcaption>implementacao</figcaption>
+<img src="arquivos/implementacao.png" alt="implementacao" /><figcaption>implementacao</figcaption>
 </figure>
 <p>Ideia: a partir da posicao do rato vamos numerando os vizinhos e colando numa fila. Dijkstra</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">typedef</span> posicao TipoDaFila;</a>
@@ -128,7 +128,7 @@ n(n-1)!, &amp;n &gt; 0
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left"><mi>n</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>2</mn><mo>*</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo></mtd><mtd columnalign="left"><mi>n</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
 2^n = \begin{cases}
 1, &amp;n=0 \\
-2*2^{n-1}, &amp;n&gt;0
+2 * 2^{n-1}, &amp;n&gt;0
 \end{cases}
 </annotation></semantics></math></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left"><mi>n</mi><mo>=</mo><mn>1</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> ou </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mo>=</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd><mtd columnalign="left"><mi>n</mi><mo>&gt;</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
@@ -160,6 +160,5 @@ F(n-1) + F(n-2), &amp;n&gt;2
 <a class="sourceLine" id="cb3-7" data-line-number="7">}</a></code></pre></div>
 <p>Faça uma função recursiva que recebe um inteiro d&gt;0 e calcula a soma dos dígitos de d.</p>
 <p>Ex: d=2751438 -&gt; 30</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"></code></pre></div>
 </body>
 </html>

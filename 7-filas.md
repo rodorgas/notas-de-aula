@@ -56,7 +56,7 @@ $$
 $$
 2^n = \begin{cases}
 1, &n=0 \\
-2*2^{n-1}, &n>0
+2 * 2^{n-1}, &n>0
 \end{cases}
 $$
 
@@ -101,8 +101,3 @@ int maximo(int v[], int n) {
 Faça uma função recursiva que recebe um inteiro d>0 e calcula a soma dos dígitos de d.
 
 Ex: d=2751438 -> 30
-
-```C
-
-```
-

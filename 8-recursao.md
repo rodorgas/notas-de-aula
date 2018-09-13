@@ -182,10 +182,13 @@ Simulação:
 Podemos mover os n discos com $2^n-1$ movimentos.
 
 **Prova:**
+
 $$
+\begin{aligned}
 n = 0 \\
 2^n - 1 + 1 + 2^{n-1}-1 \\
-2\cdot 2^n - 1
+2 \cdot 2^n - 1
+\end{aligned}
 $$
 
 ## Curvas de Hilbert
@@ -207,7 +210,7 @@ v  |                        |
                          H2
 ```
 
-Para desenha uma curva de Hilber de profundidade  fazemos 4 cópias de figuras de profundidade n-1:
+Para desenhar uma curva de Hilber de profundidade  fazemos 4 cópias de figuras de profundidade n-1:
 
 Se denotarmos por:
 
@@ -229,5 +232,4 @@ Curvas deste tipo são chamadas de fractais, e tem a propriedade de que:
 
 > O todo tem a mesma estrutura que cada pequena parte.
 
-Estes padrões ficaram na moda na década de 80 depois do livre _The fractal geometry of nature._ (B. B. Maldelbrot).
-
+Estes padrões ficaram na moda na década de 80 depois do livro _The fractal geometry of nature._ (B. B. Maldelbrot).

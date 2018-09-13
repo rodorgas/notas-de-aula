@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Aula 8</title>
+  <title>8-recursao</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -225,11 +225,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 |                        |
 +------------------------+</code></pre>
 <p>Podemos mover os n discos com <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^n-1</annotation></semantics></math> movimentos.</p>
-<p><strong>Prova:</strong> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><mi>n</mi></mtd><mtd columnalign="left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mtext mathvariant="normal">Movimentos</mtext></mtd><mtd columnalign="left"><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd columnalign="left"><mo>=</mo><mn>2</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
+<p><strong>Prova:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><mi>n</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>+</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
-n &amp;= 0 \\
-\text{Movimentos} &amp;= 2^n - 1 + 1 + 2^{n-1}-1 \\
-&amp;= 2\cdot 2^n - 1
+n = 0 \\
+2^n - 1 + 1 + 2^{n-1}-1 \\
+2 \cdot 2^n - 1
 \end{aligned}
 </annotation></semantics></math></p>
 <h2 id="curvas-de-hilbert">Curvas de Hilbert</h2>
@@ -264,7 +265,6 @@ v  |                        |
 <blockquote>
 <p>O todo tem a mesma estrutura que cada pequena parte.</p>
 </blockquote>
-<p>Estes padrões ficaram na moda na década de 80 depois do livre <em>The fractal geometry of nature.</em> (B. B. Maldelbrot).</p>
-<p>Outros fractais: Koch, Sierpinski.</p>
+<p>Estes padrões ficaram na moda na década de 80 depois do livro <em>The fractal geometry of nature.</em> (B. B. Maldelbrot).</p>
 </body>
 </html>
