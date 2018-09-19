@@ -115,10 +115,10 @@ void bubble(float v[], int n) {
 
 ### Complexidade
 
-|                         | Comparações                           | Trocas   |
-| ----------------------- | ------------------------------------- | -------- |
-| Melhor<br>(vetor ordenado) | $O(n)$                                | $0$      |
-| Pior<br>(ordem inversa)    |  $ \dfrac{n(n-1)}{2} \implies O(n^2) $  | $O(n^2)$ |
+|                            | Comparações                         | Trocas   |
+| -------------------------- | ----------------------------------- | -------- |
+| Melhor<br>(vetor ordenado) | $O(n)$                              | $0$      |
+| Pior<br>(ordem inversa)    | $\dfrac{n(n-1)}{2} \implies O(n^2)$ | $O(n^2)$ |
 
 ### Recursivo
 
