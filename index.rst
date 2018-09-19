@@ -13,12 +13,6 @@ Notas de Aula
 
    MAC121 - Algoritmos e Estruturas de Dados I <mac121>
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 
