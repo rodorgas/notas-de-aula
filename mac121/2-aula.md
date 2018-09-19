@@ -1,5 +1,124 @@
 # A Linguagem C
 
+## Tipos Estruturados
+
+1. Vetores e matrizes alocados estaticamente
+2. `structs`: uma variável capaz de armazenar vários camposd e diferentes tipos.
+
+Exemplo:
+
+```C
+struct {
+    char nome[50];
+    int nusp;
+    float nota;
+} aluno;
+
+...
+
+aluno.nota = aluno.nota - 0.5;
+scanf("%d", &(aluno.nusp));
+```
+
+
+
+Em C é permitido definir novos tipos usando o `typedef`:
+
+```C
+typedef struct {
+    double x;
+    double y;
+} ponto;
+ponto p;
+p.x = 3;
+p.y = 5;
+```
+
+## Ponteiros
+
+C permite manipular o endereço da memória em que as variáveis estão armazenadas.
+
+Exemplos:
+
+```C
+int a;
+int *p;
+int *q;
+a = 10;
+p = &a;
+scanf("%d", p);
+printf("%d", *p);  // o valor apontado por p
+```
+
+```C
+int v[5], *pv;
+pv = &(v[2]);
+*pv = 7;
+*(pv - 1) = -4;
+// ...
+x = 1.3; y = 4.9;
+troca(&x, &y);
+```
+
+Ponteiros têm dois usos principais:
+
+1. Passagem de parâmetros
+
+   ```C
+   void troca(float a, float b) {
+       float aux;
+       aux = *a;
+       *a = *b;
+       *b = aux;
+   }
+   ```
+
+2. Vetores e matrizes são ponteiros
+
+   ```C
+   int v[10];
+   // v[5] é igual a *(v + 5)
+   ```
+
+Podemos usar isso para fazer alocação dinâmica de vetores e matrizes:
+
+```C
+int n;
+float *v;
+scanf("%d", &n);
+v = malloc(n * sizeof(float));
+```
+
+```C
+typedef struct {
+    double r;
+    double im;
+} complexo;
+
+complexo *vc;  // vetor complexo
+
+vc = malloc(m * sizeof(complexo));
+
+// ...
+// Quando a memória não é mais necessária, deve ser liberada
+
+free(vc);
+for (int i = 0; i < m; i++)
+    free(mat[i]);
+free(mat);
+```
+
+```C
+// matriz
+int **mat;
+mat = malloc(m * sizeof(int *));
+for (i = 0; i < n; i++)
+    mat[i] = malloc(n * sizeof(int));
+mat[4][7] = 10;
+```
+
+
+
 ## Declarações
 
 ```
@@ -69,5 +188,7 @@ printf("%2d", m);   // 1234
 ```
 
 ----
+
+Terça, 7 de agosto
 
 Quinta, 9 de agosto

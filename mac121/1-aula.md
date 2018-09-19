@@ -32,3 +32,8 @@ $$
 ## Programa
 
 - Noções informais de prova de correção e desempenho de algoritmos
+- Noções de estruturas de dados básica
+- Vetores e matrizes, alocação dinâmica, ponteiros, strings
+- Listas ligadas, árvores binárias, pilhas, filas, filas de prioridade
+- Recursão, divisão e conquista, programação dinâmica, backtracking
+- Algortimos de ordenação
