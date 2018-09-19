@@ -1,12 +1,67 @@
----
-pagetitle: Aula 8
----
-
 # Recursão
 
-Quinta, 30 de agosto
+Dizemos que uma função é recursiva se em sua definição a própria função é usada. Isso significa que ela inclui no seu corpo uma chamada a ela mesma.
 
-Uma função recursiva é aquela que inclui no seu copro uma chamada a ela mesma.
+Exemplos:
+$$
+n! =
+\begin{cases}
+1, &n = 0 \\
+n(n-1)!, &n > 0
+\end{cases}
+$$
+
+$$
+2^n = \begin{cases}
+1, &n=0 \\
+2 * 2^{n-1}, &n>0
+\end{cases}
+$$
+
+$$
+F(n) = \begin{cases}
+1, &n=1 \text{ ou } n=2 \\
+F(n-1) + F(n-2), &n>2
+\end{cases}
+$$
+
+
+## Exemplos
+Em computação dizemos que uma função é recursiva se dentro do corpo da função temos uma chamada para ela própria.
+
+Recursão de calda: só tem uma chamada recursiva no fim.
+
+Exemplo:
+
+```C
+int fatorial (int n) {
+    if (n == 0) return 1;
+    return n*fatorial(n-1));
+}
+
+int expo2(int n) {
+    if (n == 0)
+        return 1;
+    return (2* expo2(n-1));
+}
+```
+
+Ex faça uma função recursiva que recebe um vetor com n elementos inteiros e devolve o maior
+
+```C
+int maximo(int v[], int n) {
+    if (n == 1) return v[0];
+    int max = maximo (v, n-1);
+    if (max > v[n-1])
+        return (max)
+    return v[n-1];
+}
+```
+
+Faça uma função recursiva que recebe um inteiro d>0 e calcula a soma dos dígitos de d.
+
+Ex: d=2751438 -> 30
+
 
 Exemplos: idem a aula anterior
 
@@ -24,7 +79,7 @@ int somaDigitos(int n) {
 }
 ```
 
-**Exercício:** Faça uma função que reecbe um vetor com n>0 números inteiros e devolve a média desses números.
+**Exercício:** Faça uma função que recebe um vetor com n>0 números inteiros e devolve a média desses números.
 
 ```C
 float media(int v[], int n) {
@@ -61,8 +116,7 @@ n = 4: 12, 7, -3, 5
 ```
 
 
-
-# Hanoi
+## Hanoi
 
 Na torre A são dados n discos de diâmetros diferentes que devem ser movidos para a torre C podendo usar B como auxiliar.
 
@@ -186,11 +240,12 @@ Simulação:
 Podemos mover os n discos com $2^n-1$ movimentos.
 
 **Prova:**
+
 $$
 \begin{aligned}
-n &= 0 \\
-\text{Movimentos} &= 2^n - 1 + 1 + 2^{n-1}-1 \\
-&= 2\cdot 2^n - 1
+n = 0 \\
+2^n - 1 + 1 + 2^{n-1}-1 \\
+2 \cdot 2^n - 1
 \end{aligned}
 $$
 
@@ -213,7 +268,7 @@ v  |                        |
                          H2
 ```
 
-Para desenha uma curva de Hilber de profundidade  fazemos 4 cópias de figuras de profundidade n-1:
+Para desenhar uma curva de Hilber de profundidade  fazemos 4 cópias de figuras de profundidade n-1:
 
 Se denotarmos por:
 
@@ -235,4 +290,4 @@ Curvas deste tipo são chamadas de fractais, e tem a propriedade de que:
 
 > O todo tem a mesma estrutura que cada pequena parte.
 
-Estes padrões ficaram na moda na década de 80 depois do livre _The fractal geometry of nature._ (B. B. Maldelbrot).
+Estes padrões ficaram na moda na década de 80 depois do livro _The fractal geometry of nature._ (B. B. Maldelbrot).

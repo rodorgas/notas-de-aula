@@ -1,10 +1,9 @@
 # Recursão
 
-Terça, 11 de setembro
-
 - Torres de Hanoi
 - Fractais
 
+## N Rainhas
 Retomando o problema das n Rainhas:
 
 Dado n>0, é posível colocar n rainhas num tabileiro de xadrez sem que elas se ataquem?
@@ -97,9 +96,9 @@ Simulação
 
 - n=4
 
-![IMG_2722](arquivos/IMG_2722.JPG)
+![IMG_2722](resources/IMG_2722.JPG)
 
-
+## Busca recursiva
 
 Faça uma função recursiva que recebe um vetor `v`, com `n >= 0` inteiros e um inteiro `x` e devolve um índice `i` do vetor com `v[i] = x` ou `-1` se `x` não está no vetor.
 
@@ -138,10 +137,8 @@ $$
  &= \dfrac{1}{n}(1+2+\ldots+n) \\
  &= \dfrac{1}{n}\left(\dfrac{(n+1)n}{2}\right) \\
  &= \dfrac{n+1}{2}
- 
 \end{aligned}
 $$
-
 
 
 ## Busca binária
@@ -183,3 +180,7 @@ $$
  &= \dfrac{log_2{n}(log_2{n}+1)}{2n}
 \end{aligned}
 $$
+
+---
+
+Terça, 11 de setembro

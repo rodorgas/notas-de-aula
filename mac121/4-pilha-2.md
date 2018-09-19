@@ -1,7 +1,5 @@
 # Pilha
 
-Quinta, 16 de agosto
-
 acessos, inserções e remoções são feitas em uma das extremidades (topo)
 
 Operadores: empilha, desempilha, pila vazia, topo da pilha, cria, destroi.
@@ -91,3 +89,7 @@ Anexos:
 - [postfix.c](arquivos/postfix.c)
 - [queue.c](arquivos/queue.c)
 - [stack.c](arquivos/stack.c)
+
+---
+
+Quinta, 16 de agosto

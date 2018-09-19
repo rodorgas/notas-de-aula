@@ -1,6 +1,6 @@
-# Estrutura:
+# A Linguagem C
 
-Quinta, 9 de agosto
+## Declarações
 
 ```
 // definições globais
@@ -17,7 +17,7 @@ int main {
 }
 ```
 
-# Variáveis
+## Variáveis
 Uma variável em um programa é uma parte da memória reservada para armazenar um valor. As variáveis tem tipos. Em C os tipos não são fortes.
 
 1. int
@@ -41,7 +41,7 @@ Tem o dobro da precisão de float. Para leitura e impressão usamos:
 %f:  float
 %lf: double
 
-## Tipagem
+## Tipos de dados
 C não tem tipos fortes:
 Exemplo:
 ```
@@ -67,3 +67,7 @@ printf("%7d", m);   // ___1234
 printf("%05d", m);  // 01234
 printf("%2d", m);   // 1234
 ```
+
+----
+
+Quinta, 9 de agosto

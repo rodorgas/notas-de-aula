@@ -1,5 +1,6 @@
-Terça, 21 de agosto de 2018
+# Backtrack
 
+## Problema das n Rainhas
 **Problema:** Dado `n>0`, imprima, se existir, uma solução para o problema das `n` rainhas.
 
 Exemplos:
@@ -96,7 +97,7 @@ void nRainhas(int n) {
         for (j=0; j<n;j++) tab[i][j] = 0;
     }
 
-	pulos = 0; atual.linha = 0; atual.col = 0; atual.mov = 1;
+    pulos = 0; atual.linha = 0; atual.col = 0; atual.mov = 1;
     while (pulos < n*n && temsol == 1) {
         ok = 0;
         while (atual.mov < 9 && ok == 0) {
@@ -134,3 +135,7 @@ void nRainhas(int n) {
     }
 }
 ```
+
+---
+
+Terça, 21 de agosto de 2018

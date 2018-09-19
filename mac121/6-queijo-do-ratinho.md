@@ -1,6 +1,4 @@
-Quinta, 23 de agosto
-
-## Pilhas
+# Pilha
 
 - Posfixa
 - Backtrack
@@ -8,7 +6,7 @@ Quinta, 23 de agosto
   - passeio do cavalo
   - queijo do ratinho no labirinto
 
-queijo do ratinho no labirinto
+Queijo do ratinho no labirinto
 
 ```
 +---------------------------------------+
@@ -90,83 +88,6 @@ int caminho(int **lab, int m, int n, posicao rato, posicao queijo) {
 }
 ```
 
+---
 
-## Fila
-
-Uma fila é uma estrura em que as inserções são feitas em uma das extremidade (fim) e as remoções são feitas na outra extremidade (começo). Com isso, o primeiro elemento a entrar vai ser o primeiro a sair da fila.
-
-- **Insere**: insere um elemento no fim da fila;
-- **Remove**: remove o elemento do começo da fila;
-- **PrimeiroDaFila**: devolve o primeiro;
-- **FilaVazia**: devolve se está vazia ou não.
-
-```
-+---+---+---+---+---+---+---+---+ max
-|---|---|---|---|   |   |   |   |
-+---+---+---+---+---+---+---+---+
-                  ^fim     (não é bom)
-
-+---+---+---+---+---+---+---+---+ max
-|   |   |---|---|---|---|   |   |
-+---+---+---+---+---+---+---+---+
-         ^ início
-                          ^ fim
-
-                  v inicio
-+---+---+---+---+---+---+---+---+ max
-|---|   |   |---|---|---|---|---|
-+---+---+---+---+---+---+---+---+
-     ^ fim   ^ não é usada
-                          ^ fim
-
-inicio == fim               --> vazia
-inicio == (fim + 1) % tam   --> cheia
-```
-
- ```C
-typedef TipoDaFila ...;
-typedef struct {
-    TipoDaFila *v;
-    int max;
-    int inicio;
-    int fim;
-} fila;
-
-typedef fila *Fila;
-
-Fila CriaFila(int tam) {
-    Fila F = malloc(sizeof(fila));
-    F->inicio = F->fim = 0;
-    F->max = tam;
-    F->v = malloc(tam * sizeof(TipoDaDila));
-    return F;
-}
-
-void insere(Fila F, TipoDaFila x) {
-    if ((F->fim + 1) %F->max == F->inicio)
-        resize(F);
-    F->v[F->fim] = x;
-    F->fim = (F->fim + 1) % F->max;
-}
-
-int FilaVazia(Fila F) {
-    return (F->inicio == F->fim);
-}
-
-void remove(Fila F) {
-    if (FilaVazia(F))
-        printf("Erro!");
-    else
-        F->inicio = (F->inicio + 1) % F->max;
-}
-
-TipoDaFila PrimeiroDaFila(Fila F) {
-    if (FilaVazia(F)) {
-        printf("Erro");
-        return ???
-    }
-   
-    return F->v[F->inicio]);
-}
- ```
-
+Quinta, 23 de agosto

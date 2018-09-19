@@ -1,7 +1,5 @@
 # Pilha
 
-Terça, 14 de agosto
-
 **Problema:** Dada uma sequência com `(, [, {, }, ], )`determinar se a sequência é bem formada).
 
 Uma pilha é uma estrutura de dados em que o último elemento que entra será o primeiro a sair. Ela tem uma única extremidade, chamada topo, em que inserções e remoções são feitas:
@@ -108,7 +106,7 @@ Funções:
    }
    ```
 
-# Análise Assintótica
+## Análise Assintótica
 
 Dizemos que:
 
@@ -125,3 +123,6 @@ Ex.:
 - $f(n) = n^2 + 10000n$ é $O(n^2)$
 - $f(n) = n + 1$
 
+---
+
+Terça, 14 de agosto

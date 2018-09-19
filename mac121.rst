@@ -1,0 +1,18 @@
+MAC 121
+=======
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+   :glob:
+
+   mac121/1-aula.md
+   mac121/2-aula.md
+   mac121/3-pilha.md
+   mac121/4-pilha-2.md
+   mac121/5-backtrack.md
+   mac121/6-queijo-do-ratinho.md
+   mac121/7-filas.md
+   mac121/8-recursao.md
+   mac121/9-recursao.md
+   mac121/10-ordenacao.md
