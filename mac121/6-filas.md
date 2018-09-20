@@ -78,12 +78,14 @@ TipoDaFila PrimeiroDaFila(Fila F) {
 }
  ```
 
+Anexo: [queue.c](../_static/queue.c)
+
 ![implementacao](resources/implementacao.png)
 
 ## Problema do ratinho
 Agora com filas.
 
-Ideia: a partir da posição do rato vamos numerando os vizinhos e colando numa fila. Dijkstra
+Ideia: a partir da posição do rato vamos numerando os vizinhos e colocando numa fila. Essa ideia é parecida com Dijkstra.
 
 ```C
 typedef posicao TipoDaFila;

@@ -1,6 +1,8 @@
 # Ordenação
 
-**Problema geral:** Dado um vetor com `n >= 0` elementos, rearranje os elementos do vetor de forma que fiquem em ordem crescente: `v[0] <= v[1] <= ... <= n[n-1]`
+.. include:: ../README.txt
+
+**Problema geral:** Dado um vetor com `n >= 0` elementos, rearranje os elementos do vetor de forma que fiquem em ordem crescente: `v[0] <= v[1] <= ... <= v[n-1]`
 
 ## Ordenação por seleção
 
@@ -30,7 +32,9 @@ void selecao(float v[], int n) {
          */
         imax = 0;
         for (j = 1; i <= n-i; j++) {
-            // invariante:
+            /* Invariante: Para todo j, sei que imax contém o
+             * índice do maior número até o j-ésimo elemento.
+             */
             if (v[j] > v[imax])
                 imax = j;
         }
@@ -39,13 +43,13 @@ void selecao(float v[], int n) {
 }
 ```
 
-Para analisar um loop em um algoritmo ou verificar sua **corretude** utiliza-se técnicas como **invariantes** de loop: aquilo que está correto em todas as iterações.
+Para analisar um loop em um algoritmo ou verificar sua **corretude**, utiliza-se técnicas como **invariantes** de loop: aquilo que está correto em todas as iterações.
 
-### Complexidade:
+### Complexidade
 
 Número de comparações:
 $$
-n-1 + n-1 + ... + 1 = \dfrac{n(n-1)}{2}
+n-1 + n-2 + ... + 1 = \dfrac{n(n-1)}{2}
 $$
 **Pior caso**
 
@@ -99,7 +103,7 @@ void selecaoRec(flat v[], int n) {
   19      19                 95                      95
 ```
 
-**Ideia:** em cada iteração percorra o vetor comparando elementos vizinhos e trocando se estão na ordem errada. Quando não tiver mais elementos invertidos, o vetor estará ordenado. Sabemos que em iteração, um elemento vai pro lugar.
+**Ideia:** em cada iteração percorra o vetor comparando elementos vizinhos e trocando-os se estão na ordem errada. Quando não tiver mais elementos invertidos, o vetor estará ordenado. Sabemos que em cada iteração, um elemento vai pro lugar.
 
 ```C
 void bubble(float v[], int n) {

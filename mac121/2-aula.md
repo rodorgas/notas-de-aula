@@ -121,7 +121,7 @@ mat[4][7] = 10;
 
 ## Declarações
 
-```
+```C
 // definições globais
 
 #include <stdio.h>
@@ -139,15 +139,15 @@ int main {
 ## Variáveis
 Uma variável em um programa é uma parte da memória reservada para armazenar um valor. As variáveis tem tipos. Em C os tipos não são fortes.
 
-1. int
-ex.: int num, soma;
+1. `int`
+ex.: `int num, soma;`
 Os número inteiros são armazenados em 2 bytes "em copmlemento de dois", podendo assumir valores entre:
 -2^15 <= num <= 2^15 - 1 = 32767
 
-    1.1 unsigned int: 0 <= x <= 2^16 - 1
-    1.1 long int: usa 4 bytes
+    1.1 `unsigned int`: 0 <= x <= 2^16 - 1
+    1.1 `long int`: usa 4 bytes
 
-2. float
+2. `float`
 Uma variável deste tipo armazena um "número real". Usamos o ponto flutuante.
 ```
 Ex. 1234.5678: .12345678 * 10^4
@@ -155,15 +155,16 @@ Ex. 1234.5678: .12345678 * 10^4
               |----------|-----|
 ```
 
-3. double
+3. `double`
 Tem o dobro da precisão de float. Para leitura e impressão usamos:
-%f:  float
-%lf: double
+`%f`:  float
+`%lf`: double
 
 ## Tipos de dados
 C não tem tipos fortes:
 Exemplo:
-```
+
+```C
 int n;
 float x;
 
@@ -172,7 +173,7 @@ x= n / 2;
 ```
 
 ## Imprimindo valores
-```
+```C
 // _ representa espaço
 
 float x = 3.14159;
