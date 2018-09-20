@@ -11,4 +11,4 @@ MAC 121
    mac121/4-backtrack.md
    mac121/6-filas.md
    mac121/7-recursao.md
-   mac121/8-ordenacao.md
+   mac121/8-ordenacao.rst
