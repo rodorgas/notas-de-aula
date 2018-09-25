@@ -84,9 +84,9 @@ typedef struct {
     int linha;
     int col;
     int mov;
-} PuloDoCavalo
+} PuloDoCavalo;
 
-void nRainhas(int n) {
+void puloDoCavalo(int n) {
     Pilha pos = CriaPilha(n);
     int **tab, i, j, pulos, temsol = 1;
     PuloDoCavalo atual;
@@ -115,7 +115,7 @@ void nRainhas(int n) {
                 if (PilhaVazia(pos))
                     temsol = 0;
                 else {
-                	atual = TopoDaPilha(pos);
+                    atual = TopoDaPilha(pos);
                     Desempilha(pos);
                     tab[atual][col] = 0;
                     col++;

@@ -317,9 +317,131 @@ Quicksort
 =========
 Hoare, 1960
 
-**Ideia:** divisão e conquista.
+A ideia do algoritmo é aplicar divisão e conquista de uma forma diferente. Escolhemos um pivô e dividimos os elementos do vetor de forma que os menores ou iguais ao pivô são movidos para o início e os maiores para o fim.
+::
 
-<hr>
+    [40] 12  25  45  72  10  39  14  23  42  37  61
+     12  25  10  39  14  23  37 [40] 45  72  42  61
+     |------------v------------|    |------v------|
+     10 [12] 25  39  14  23  37      42 [45] 72  61
+             14  23 [25] 39  37              61 [72]
+            [14] 23      37 [39]
+
+Com isso, o pivô vai para a posição correta no vetor ordenado.
+::
+          pivô
+    [  <=  []   >    ]
+
+Basta, então, ordenar recursivamente os dois pedaços do vetor.
+
+Se eu der sorte na escolha do pivô, cada execução do separa divide o vetor em dois pedaços de tamanho iguais.
+::
+
+    [      []      ] n
+    [ []  ]  [ []  ] n/2
+    [ ] [ ]  [ ] [ ] n/4   logn
+
+Se eu der azar,
+::
+
+    n   [               []]
+    n-1 [[]               ]    |
+    n-2    [[]            ]    |  n-1
+             [          []]    v
+
+.. code-block:: c
+
+    int separa(float v[], int ini, int fim) {
+        int p = ini, q = fim - 1;
+        float pivo = v[ini];
+        while (p < q) {
+            while (v[q] > pivo)
+                q--;
+            if (q > p)
+                troca(v, p, q);
+            while (p < q && v[p] <= pivo)
+                p++;
+            if (p < q)
+                troca(v, p, q);
+        }
+    }
+
+    void Quicksort(float v[], int ini, int fim) {
+        int pivo;
+        if (fim - ini >= 2) {
+            pivo = separa(v, ini, fim);
+            Quicksort(v, ini, pivo);
+            Quicksort(v, pivo+1, fim);
+        }
+    }
+
+Anexo: `quicksort.c`_
+
+Complexidade
+------------
+
+Com isso, no melhor caso::
+
+      n/2     n/2
+    [      []      ]     n    | log_2 n
+    [      ][      ]   < n    v
+    O(n log_2 n)
+
+E no pior caso::
+
+    [           []]  n
+    [             ]  n-1       O(n^2)
+
+Variação do Sedgewick
+---------------------
+
+.. code-block:: c
+
+    int separa(float v[], int ini, int fim) {
+        /* R. Sedgewick */
+        int i = ini - 1, j;
+        float pivo = v[fim - 1];
+        for (j = ini; j < fim; j++)
+            if (v[j] <= pivo) {
+                i++;
+                troca(v, i, j);
+            }
+        return i;
+    }
+
+Análise do caso médio
+^^^^^^^^^^^^^^^^^^^^^
+Seja :math:`C(n)` o número total de comparações (*) executadas para ordenar um vetor com n elementos na média, considerando que a probabilidade do separa devolve qualquer índice é a mesma.
+
+.. math::
+
+    C(n) = \begin{cases}
+        0 &\text{, se } n =1 \text{ ou } n = 1 \\
+        n + prob(\text{separa devolver o 1º})\cdot(C(0) + C(n-1)) +
+        &\text{, se } n \geq 2 \\
+        prob(\text{separa devolver o 2º})\cdot(C(1) + C(n-2)) + \\
+        prob(\text{separa devolver o 3º})\cdot(C(2) + C(n-3)) + \\
+        \ldots \\
+        prob(\text{separa devolver último})\cdot(C(n-1) + C(0)) \\
+    \end{cases}
+
+    C(n) = \dfrac{1}{n}\Left[C(0) + C(n-1) + C(1) + C(n-2) + \ldots + C(n-1) + C(0)\Right]
+    C(n) = n + \dfrac{2}{n}
+    \sum^{n-1}_{i=0} c(i)
+
+Comparação
+==========
+
+=================   ======================================
+Algoritmo           Complexidade (pior caso)
+=================   ======================================
+Seleção             :math:`O(n^2)` comparações, O(n) trocas
+Bubblesort          :math:`O(n^2)` comparações e trocas
+Insercao            :math:`O(n^2)` comparações e movimentos
+Inserção binária    :math:`O(n \log{n})` comparações :math`O(n^2)` movimentos
+Mergesort           :math:`O(n \log{n})`
+Quicksort           :math:`O(n log_2 n)`
+=================   ======================================
 
 Links
 =====
@@ -328,6 +450,7 @@ Links
 
 .. _Sorting algorithms: https://www.programming-algorithms.net/article/39344/Bubble-sort
 .. _Gifs de ordenação: ../ordenacao-gifs.html
+.. _quicksort.c: ../_static/quicksort.c
 
 Terça-feira, 18 de setembro
 Quarta-feira, 20 de setembro
