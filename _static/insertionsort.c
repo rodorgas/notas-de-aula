@@ -15,8 +15,6 @@ void selecao(float v[], int n) {
             /* Invariante: Para todo j, sei que imax contém o
              * índice do maior número até o j-ésimo elemento.
              */
-            printf("i: %d ", j);
-            printf("j: %d\n", j);
             if (v[j] > v[imax])
                 imax = j;
         }

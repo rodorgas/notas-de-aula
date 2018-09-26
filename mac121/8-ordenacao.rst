@@ -33,7 +33,7 @@ Ordenação por seleção
              * números estão ordenados à direita.
              */
             imax = 0;
-            for (j = 1; i <= n-i; j++) {
+            for (j = 1; j <= n-i; j++) {
                 /* Invariante: Para todo j, sei que imax contém o
                  * índice do maior número até o j-ésimo elemento.
                  */
@@ -43,6 +43,8 @@ Ordenação por seleção
             troca(v, n-i, imax);
         }
     }
+
+Anexo: `insertionsort.c`_
 
 Para analisar um loop em um algoritmo ou verificar sua **corretude**, utiliza-se técnicas como **invariantes** de loop: aquilo que está correto em todas as iterações.
 
@@ -451,6 +453,7 @@ Links
 .. _Sorting algorithms: https://www.programming-algorithms.net/article/39344/Bubble-sort
 .. _Gifs de ordenação: ../ordenacao-gifs.html
 .. _quicksort.c: ../_static/quicksort.c
+.. _insertionsort.c: ../_static/insertionsort.c
 
 Terça-feira, 18 de setembro
 Quarta-feira, 20 de setembro
