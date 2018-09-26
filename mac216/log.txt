@@ -12,7 +12,14 @@ Quinta-feira, 20 de setembro
 ============================
 * Fim do assembly
 * Expressões regulares pode cair na prova
+* Hashtable
+* Compilando programas com gcc
 
 * Dicas culturais
     * Mystery - Hugh Laurie
     * kill -9 (linux rap) - https://www.youtube.com/watch?v=0rG74rG_ubs
+
+Terça-feira, 25 de setembro
+===========================
+* Shells
+* Programação bash

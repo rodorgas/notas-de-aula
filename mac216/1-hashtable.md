@@ -1,4 +1,4 @@
-## Hashtable
+# Hashtable
 Tabela chave-valor. Suponha que usemos como função de hash o número de caracteres da string:
 
 ```C

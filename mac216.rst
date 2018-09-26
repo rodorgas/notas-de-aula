@@ -3,6 +3,7 @@ MAC216
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
 
-   mac216/log.txt
    mac216/1-hashtable.md
+   mac216/2-bash.rst
