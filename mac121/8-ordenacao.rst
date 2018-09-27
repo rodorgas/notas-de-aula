@@ -320,6 +320,7 @@ Quicksort
 Hoare, 1960
 
 A ideia do algoritmo é aplicar divisão e conquista de uma forma diferente. Escolhemos um pivô e dividimos os elementos do vetor de forma que os menores ou iguais ao pivô são movidos para o início e os maiores para o fim.
+
 ::
 
     [40] 12  25  45  72  10  39  14  23  42  37  61
@@ -431,6 +432,140 @@ Seja :math:`C(n)` o número total de comparações (*) executadas para ordenar u
     C(n) = n + \dfrac{2}{n}
     \sum^{n-1}_{i=0} c(i)
 
+Aleatorizado
+------------
+
+Em cada chamada do algoritmo, um elemento do vetor é escolhido para pivô e o vetor é reorganizado:
+
+::
+
+    [ <= x  (x)   > x     ]
+             ^ pivô
+
+Como fazer esta separação:
+1. Hoare "closing gap"
+
+::
+
+    v pivô
+    x   [  <=x  |        |  >x ]
+
+2. Sedgewick
+
+::
+
+    v pivo      i          j
+    x   [ <=x    |  >x    |    ]
+
+.. code-block:: c
+
+    int separaAleatorio(float v[], int ini, int fim) {
+        int r = random(ini, fim);  // sorteia índice [ini, fim-1]
+        troca(v, r, fim - 1);
+        return separaSedgewick(v, ini, fim);
+    }
+
+    void quickSortAleatorizado(float v[], int ini, int fim) {
+        int pivo;
+        if (fim - ini > 1) {
+            pivo = separaAleatorizado(v, ini, fim);
+            quickSortAleatorizado(v, ini, pivo);
+            quickSortAleatorizado(v, pivo + 1, fim);
+        }
+    }
+
+A versão aleatorizada do quicksort tem complexidade esperada :math:`O(n\log{n})`. Note que a probabilidade de ocorrer o pior caso é praticamente nula :math:`\dfrac{2^n}{n!}`.
+
+Complexidade
+^^^^^^^^^^^^
+
+* Melhor caso: :math:`O(n\log{n})`
+* Pior caso: :math:`O(n^2)`
+* Caso médio: :math:`O(n\log{n})`
+
+Heapsort
+========
+Williams, Floyd 1960
+
+Uma heap é estrutura hierárquica (árvore) com as seguintes propriedades:
+
+1. É completa até o penúltimo nível;
+2. Os elementos do último nível estão o mais à esquerda possível;
+3. Cada elemento é maior que seus filhos.
+
+Exemplo::
+
+             ___1__
+            /      \
+        ___21       17
+       /     \     /  \
+      20      1   8    14
+     /  \
+    7    4
+
+Um jeito simples de representar um heap é usando um vetor::
+
+     0  1  2  3  4  5  6  7  8
+    [43|21|17|20| 1| 8|14| 7| 4]
+
+Os filhos do elemento na posição :math:`i` em :math:`2i+1` e :math:`2i+2`.
+O pai do elemento na posição :math:`i` está com :math:`(i-1)/2`.
+
+Suponha que temos uma função que recebe um vetor e o transforma num heap.
+
+::
+
+    void heapifica(v, n) {
+        heapifica(v, n);
+        for (i = n-1; i > 0; i--) {
+            troca(v, 0, i);
+            heapifica(v, i);
+            rebaixa(v, i, 0);
+        }
+    }
+
+    void heapifica(float v[], int n) {
+        int i;
+        for(i = (n-2)/2; i >= 0; i--) {
+            rebaixa(v, n, i);
+        }
+        // Numa primeira análise executamos n/2 * rebaixa, portanto,
+        // O(nlogn).
+        // Uma análise mais cuidadosa mostra O(n).
+    }
+
+    void rebaixa(float v[], int n, int i) {
+        int pai, filho;
+        pai = i; filho = 2*i + 1;
+
+        while (filho < n) {
+            if (filho + 1 < n && v[filho + 1] > v[filho])
+                filho++;
+
+            if (v[filho] < v[pai])
+                break;
+            else {
+                troca(v, pai, filho)
+                pai = filho;
+                filho = 2*pai + 1;
+            }
+        }
+    }
+
+::
+
+    30  27  10  17  19  48  39  4   25
+    48  39  30  25  10  27  19  17  4
+    4   39  30  25  10  27  19  17  48
+
+            ____4___
+           /        \
+         _39        _30
+        /   \      /   \
+      _25    10   27    19
+     /
+    17
+
 Comparação
 ==========
 
@@ -440,9 +575,9 @@ Algoritmo           Complexidade (pior caso)
 Seleção             :math:`O(n^2)` comparações, O(n) trocas
 Bubblesort          :math:`O(n^2)` comparações e trocas
 Insercao            :math:`O(n^2)` comparações e movimentos
-Inserção binária    :math:`O(n \log{n})` comparações :math`O(n^2)` movimentos
-Mergesort           :math:`O(n \log{n})`
-Quicksort           :math:`O(n log_2 n)`
+Inserção binária    :math:`O(n \log_2{n})` comparações :math`O(n^2)` movimentos
+Mergesort           :math:`O(n \log_2{n})`
+Quicksort           :math:`O(n \log_2{n})`
 =================   ======================================
 
 Links

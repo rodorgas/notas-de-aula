@@ -7,7 +7,7 @@ void troca(float v[], int ini, int fim) {
     v[fim] = temp;
 }
 
-int separa(float v[], int ini, int fim) {
+int separaSedgewick(float v[], int ini, int fim) {
     int p = ini, q = fim - 1;
     float pivo = v[ini];
     while (p < q) {
@@ -20,23 +20,28 @@ int separa(float v[], int ini, int fim) {
         if (p < q)
             troca(v, p, q);
     }
-
-    return p;
 }
 
-void Quicksort(float v[], int ini, int fim) {
+
+int separaAleatorio(float v[], int ini, int fim) {
+    int r = random(ini, fim);  // sorteia índice [ini, fim-1]
+    troca(v, r, fim - 1);
+    return separaSedgewick(v, ini, fim);
+}
+
+void quickSortAleatorizado(float v[], int ini, int fim) {
     int pivo;
-    if (fim - ini >= 2) {
-        pivo = separa(v, ini, fim);
-        Quicksort(v, ini, pivo);
-        Quicksort(v, pivo+1, fim);
+    if (fim - ini > 1) {
+        pivo = separaAleatorio(v, ini, fim);
+        quickSortAleatorizado(v, ini, pivo);
+        quickSortAleatorizado(v, pivo + 1, fim);
     }
 }
 
 int main() {
     float v[12] = {12, 25, 10, 39, 14, 23, 37, 40, 45, 72, 42, 61};
 
-    Quicksort(v, 0, 11);
+    quickSortAleatorizado(v, 0, 11);
 
     int i;
     for (i=0; i < 12; i++) {

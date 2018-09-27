@@ -8,6 +8,7 @@ sphinx = "*"
 recommonmark = "*"
 sphinx-markdown-tables = "*"
 sphinx-rtd-theme = "*"
+binarytree = "*"
 
 [dev-packages]
 
