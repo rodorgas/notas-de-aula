@@ -12,3 +12,4 @@ MAC 121
    mac121/6-filas.md
    mac121/7-recursao.md
    mac121/8-ordenacao.rst
+   mac121/9-heap.rst
