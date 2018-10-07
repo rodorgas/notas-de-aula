@@ -330,7 +330,9 @@ A ideia do algoritmo é aplicar divisão e conquista de uma forma diferente. Esc
              14  23 [25] 39  37              61 [72]
             [14] 23      37 [39]
 
+
 Com isso, o pivô vai para a posição correta no vetor ordenado.
+
 ::
           pivô
     [  <=  []   >    ]

@@ -9,8 +9,9 @@ recommonmark = "*"
 sphinx-markdown-tables = "*"
 sphinx-rtd-theme = "*"
 binarytree = "*"
+sphinx-autobuild = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.4"
+python_version = "3.7"

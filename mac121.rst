@@ -13,3 +13,4 @@ MAC 121
    mac121/7-recursao.md
    mac121/8-ordenacao.rst
    mac121/9-heap.rst
+   mac121/10-lista-ligada.rst
