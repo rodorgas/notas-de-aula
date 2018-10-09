@@ -369,6 +369,7 @@ Se eu der azar,
             if (p < q)
                 troca(v, p, q);
         }
+        return p;
     }
 
     void Quicksort(float v[], int ini, int fim) {
