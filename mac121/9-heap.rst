@@ -11,13 +11,13 @@ Heap
 Fila de prioridade
 ==================
 
-Uma fila de prioridade é uma estrutrua que permite as seguintes operações:
+Uma fila de prioridade é uma estrutura que permite as seguintes operações:
 
 1. Inserção
 2. Remove o elemento de prioridade máxima
 3. Altera a prioridade de um elemento.
 
-Exemplo: imagine um sistema operacional  com várias tarefas sendo executadas "ao mesmo tempo". Cada tarefa tem uma certa prioridade e queremos saber qual a tarefa de maior/menor prioridade.
+Exemplo: imagine um sistema operacional com várias tarefas sendo executadas "ao mesmo tempo". Cada tarefa tem uma certa prioridade e queremos saber qual a tarefa de maior/menor prioridade.
 
 Implementações:
 
@@ -88,10 +88,10 @@ Exemplo: imagine um vetor com 3 elementos:
     v[0]v[1]v[2]  v[0]v[2]v[1]
 
 
-Note que a execução de qualquer algoritmo de ordenação baseado em comparações dá origem a uma árvore niária dessas con n! folhas (as possíveis n! permutações dos n elementos).
+Note que a execução de qualquer algoritmo de ordenação baseado em comparações dá origem a uma árvore binária dessas com :math:`n!` folhas (as possíveis :math:`n!` permutações dos :math:`n` elementos).
 
 O consumo de tempo de qualquer algoritmo é limitado inferiormente pela altura desta árvore.
 
-Uma árvore com k folhas tem k-1 nós internos. Portanto, a árvore de decisão tem :math:`n!-1` nós internos.
+Uma árvore com :math:`k` folhas tem :math:`k-1` nós internos. Portanto, a árvore de decisão tem :math:`n!-1` nós internos.
 
-Obs 2: uma árvore com t nós tem altura pelo menos :math:`\log_2{t}`.
+Obs 2: uma árvore com :math:`t` nós tem altura pelo menos :math:`\log_2{t}`.

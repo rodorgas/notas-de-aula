@@ -237,8 +237,9 @@ Podemos melhorar o algoritmo com relação ao número de comparações.
 
 Mergesort
 =========
-
 von Neumann, 1945
+
+**Ideia:**  Divisão e conquista. O vetor é divido na metade e cada metade é ordenada. Então, os elementos são intercalados para obter o vetor ordenado.
 
 ::
 
@@ -252,12 +253,10 @@ von Neumann, 1945
 ::
 
     117   195   81   43 | 15   79   18   80   47
-     v     v
-    15    18    43   47 | 15   18   47   79   80
+
+    43    81   117  195 | 15   18   47   79   80
 
     15    18    43   47 | 79   80   81   117  195
-
-**Ideia:**  Divisão e conquista. O vetor é divido na metade e cada metade é ordenada. Então, os elementos são intercalados para obter o vetor ordenado.
 
 .. code-block:: c
 
@@ -334,6 +333,7 @@ A ideia do algoritmo é aplicar divisão e conquista de uma forma diferente. Esc
 Com isso, o pivô vai para a posição correta no vetor ordenado.
 
 ::
+
           pivô
     [  <=  []   >    ]
 
@@ -431,8 +431,8 @@ Seja :math:`C(n)` o número total de comparações (*) executadas para ordenar u
         prob(\text{separa devolver último})\cdot(C(n-1) + C(0)) \\
     \end{cases}
 
-    C(n) = \dfrac{1}{n}\Left[C(0) + C(n-1) + C(1) + C(n-2) + \ldots + C(n-1) + C(0)\Right]
-    C(n) = n + \dfrac{2}{n}
+    C(n) = \dfrac{1}{n}\left[C(0) + C(n-1) + C(1) + C(n-2) + \ldots + C(n-1) + C(0)\right] \\
+    C(n) = n + \dfrac{2}{n} \\
     \sum^{n-1}_{i=0} c(i)
 
 Aleatorizado
@@ -577,8 +577,8 @@ Algoritmo           Complexidade (pior caso)
 =================   ======================================
 Seleção             :math:`O(n^2)` comparações, O(n) trocas
 Bubblesort          :math:`O(n^2)` comparações e trocas
-Insercao            :math:`O(n^2)` comparações e movimentos
-Inserção binária    :math:`O(n \log_2{n})` comparações :math`O(n^2)` movimentos
+Inserção            :math:`O(n^2)` comparações e movimentos
+Inserção binária    :math:`O(n \log_2{n})` comparações :math:`O(n^2)` movimentos
 Mergesort           :math:`O(n \log_2{n})`
 Quicksort           :math:`O(n \log_2{n})`
 =================   ======================================
