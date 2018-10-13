@@ -44,7 +44,7 @@ Ordenação por seleção
         }
     }
 
-Anexo: `insertionsort.c`_
+Anexo: `selectionsort.c`_
 
 Para analisar um loop em um algoritmo ou verificar sua **corretude**, utiliza-se técnicas como **invariantes** de loop: aquilo que está correto em todas as iterações.
 

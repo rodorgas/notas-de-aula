@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 void troca(float v[], int i, int j) {
     float aux = v[i];
     v[i] = v[j];
