@@ -591,7 +591,7 @@ Links
 .. _Sorting algorithms: https://www.programming-algorithms.net/article/39344/Bubble-sort
 .. _Gifs de ordenação: ../ordenacao-gifs.html
 .. _quicksort.c: ../_static/quicksort.c
-.. _insertionsort.c: ../_static/insertionsort.c
+.. _selectionsort.c: ../_static/selectionsort.c
 
 Terça-feira, 18 de setembro
 Quarta-feira, 20 de setembro
