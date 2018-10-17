@@ -60,7 +60,7 @@ Número de comparações:
 **Pior caso:**
 
 Comparações: :math:`O(n^2)`
-Trocas: :math:`O(n)`.
+Trocas: :math:`O(n^2)`.
 
 **Ideia:** e se em cada iteração achássemos o máximo e o mínimo e trocássemos os dois?
 
@@ -112,15 +112,23 @@ Bubble sort
 
 .. code-block:: c
 
-    void bubble(float v[], int n) {
-        int i, j;
-        for (i = 1; i < n; i++)
-            for (j = 0; j < n-i; j++)
+    void bubblesort(int v[], int n) {
+        int i, j, trocou;
+
+        for (i = 1; i < n; i++) {
+            trocou = 0;
+            for (j = 0; j < n-i; j++) {
                 if (v[j+1] < v[j]) {
                     troca(v, j, j+1);
                     trocou = 1;
                 }
+            }
+
+            if (!trocou) break;
+        }
     }
+
+Anexo: `bubblesort.c`
 
 Complexidade
 ------------
@@ -167,6 +175,7 @@ John Mauchly, 1946
 
 .. code-block:: c
 
+    // versão iterativa
     void insercao(float v[], int n) {
         int b, i;
         float x;
@@ -178,6 +187,7 @@ John Mauchly, 1946
         }
     }
 
+    // versão recursiva
     void insercaoRec(float v[], int n) {
         int i; float x;
 
@@ -590,6 +600,7 @@ Links
 
 .. _Sorting algorithms: https://www.programming-algorithms.net/article/39344/Bubble-sort
 .. _Gifs de ordenação: ../ordenacao-gifs.html
+.. _bubblesort.c: ../_static/bubblesort.c
 .. _quicksort.c: ../_static/quicksort.c
 .. _selectionsort.c: ../_static/selectionsort.c
 

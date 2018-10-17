@@ -36,7 +36,7 @@ void Quicksort(float v[], int ini, int fim) {
 int main() {
     float v[12] = {12, 25, 10, 39, 14, 23, 37, 40, 45, 72, 42, 61};
 
-    Quicksort(v, 0, 11);
+    Quicksort(v, 1, 12);
 
     int i;
     for (i=0; i < 12; i++) {

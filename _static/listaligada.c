@@ -78,7 +78,7 @@ apontador insereNoFimRec(apontador inicio, int x) {
     return inicio;
 }
 
-apontador insereOrdenado(apontador inicio, int x) {
+/*apontador insereOrdenado(apontador inicio, int x) {
     apontador p, ant, novo;
     for (ant = NULL, p = inicio;
             p != NULL && p->info < x;
@@ -91,6 +91,114 @@ apontador insereOrdenado(apontador inicio, int x) {
     ant->prox = novo;
     novo->prox = p;
     return inicio;
+}*/
+
+apontador insereOrdenado(apontador inicio, int x) {
+    apontador p, ant, novo;
+    p = inicio; ant = NULL;
+    while (p != NULL && p->info < x) {
+        ant = p;
+        p = p->prox;
+    }
+
+    novo = malloc(sizeof(struct celula));
+    novo->info = x;
+    if (ant != NULL)
+        ant->prox = novo;
+    else
+        inicio = novo;
+
+    return inicio;
+}
+
+apontador insereOrdenadoRec(apontador inicio, int x) {
+    apontador novo;
+    if (inicio == NULL || inicio->info > x) {
+        novo = malloc(sizeof(struct celula));
+        novo->info = x;
+        novo->prox = inicio;
+        return novo;
+    }
+    else {
+        inicio->prox = insereOrdenadoRec(inicio->prox, x);
+        return inicio;
+    }
+}
+
+apontador removeEl(apontador inicio, TipoDaLista x) {
+    apontador p, ant;
+    p = inicio;
+    ant = NULL;
+
+    while (p != NULL && p->info != x) {
+        ant = p;
+        p = p->prox;
+    }
+
+    if (p != NULL) {
+        if (ant != NULL)
+            ant->prox = p->prox;
+        else
+            inicio = p->prox;
+        free(p);
+    }
+    return inicio;
+}
+
+apontador removeRec(apontador inicio, TipoDaLista x) {
+    apontador aux;
+
+    if (inicio == NULL)
+        return inicio;
+
+    if (inicio->info == x) {
+        aux = inicio;
+        inicio = inicio->prox;
+        free(aux);
+        return inicio;
+    }
+}
+
+apontador intercala(apontador p, apontador q) {
+    /* recebe duas listas ordenadas e devolve uma lista ordenada com
+     * todas as celulas */
+    apontador inicio, ult;
+    inicio = ult = NULL;
+    while (p!= NULL && q!= NULL) {
+        if (p->info < q-> info) {
+            if (ult == NULL)
+                inicio = ult = p;
+            else {
+                ult->prox = p;
+                ult = p;
+            }
+            p = p->prox;
+        }
+        else {
+            if (ult == NULL) {
+                inicio = ult = q;
+                ult->prox = q;
+                ult = q;
+            }
+            q = q->prox;
+        }
+
+        if (p == NULL) {
+            if (ult == NULL)
+                inicio = q;
+            else
+                ult->prox = q;
+        }
+
+        if (q == NULL) {
+            if (ult == NULL)
+                inicio = p;
+            else
+                ult->prox = p;
+        }
+        return inicio;
+    }
+
 }
 
 int main() {
@@ -98,6 +206,7 @@ int main() {
     insereNoFim(lista, 1);
     insereNoFim(lista, 5);
     imprimeLista(lista);
+
     removePrimeiro(lista);
     removePrimeiro(lista);
 
