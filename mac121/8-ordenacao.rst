@@ -528,25 +528,6 @@ Suponha que temos uma função que recebe um vetor e o transforma num heap.
 
 ::
 
-    void heapifica(v, n) {
-        heapifica(v, n);
-        for (i = n-1; i > 0; i--) {
-            troca(v, 0, i);
-            heapifica(v, i);
-            rebaixa(v, i, 0);
-        }
-    }
-
-    void heapifica(float v[], int n) {
-        int i;
-        for(i = (n-2)/2; i >= 0; i--) {
-            rebaixa(v, n, i);
-        }
-        // Numa primeira análise executamos n/2 * rebaixa, portanto,
-        // O(nlogn).
-        // Uma análise mais cuidadosa mostra O(n).
-    }
-
     void rebaixa(float v[], int n, int i) {
         int pai, filho;
         pai = i; filho = 2*i + 1;
@@ -562,6 +543,25 @@ Suponha que temos uma função que recebe um vetor e o transforma num heap.
                 pai = filho;
                 filho = 2*pai + 1;
             }
+        }
+    }
+
+    void heapifica(float v[], int n) {
+        int i;
+        for(i = (n-2)/2; i >= 0; i--) {
+            rebaixa(v, n, i);
+        }
+        // Numa primeira análise executamos n/2 * rebaixa, portanto,
+        // O(nlogn).
+        // Uma análise mais cuidadosa mostra O(n).
+    }
+
+    void heapifica(v, n) {
+        heapifica(v, n);
+        for (i = n-1; i > 0; i--) {
+            troca(v, 0, i);
+            heapifica(v, i);
+            rebaixa(v, i, 0);
         }
     }
 
