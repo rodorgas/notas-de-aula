@@ -41,15 +41,15 @@ Exemplo:
 
 .. math::
 
-    p(x) = 3.5 - 7x^{74} + 3.14x^{123} - 0.3x^{1279}
+    p(x) = 3.5 - 7x^{14} + 3.14x^{123} - 0.3x^{1279}
 
 Como representar um polinômio no computador?
 
 **Ideia 1:** usando um vetor colocando no índice :math:`i` o coeficiente do termo de grau :math:`i`.
 
-Esta representação como desvantagem o desperdício de espaço caso o polinômio seja esparso, ou seja, ele tenha poucos coeficientes não nulos.
+Essa representação como desvantagem o desperdício de espaço caso o polinômio seja esparso, ou seja, ele tenha poucos coeficientes não nulos.
 
-**Ideia 2:** lista ligada com os elementos não nulos do polinômio. Cada célula da lista lugadaa guarda o grau e o coeficiente não nulo do termo. Vamos considerar que os termos estão ordenados em ordem crescente de grau:
+**Ideia 2:** lista ligada com os elementos não nulos do polinômio. Cada célula da lista ligada guarda o grau e o coeficiente não nulo do termo. Vamos considerar que os termos estão ordenados em ordem crescente de grau:
 
 .. image:: resources/listaligada-polinomio.svg
 
