@@ -29,7 +29,7 @@ Anexo: `listaligada.c`_
 
 Aplicação
 =========
-Representação de polinômios usando listas ligadas,
+Representação de polinômios usando listas ligadas.
 
 Considere um polinômio de coeficientes reais:
 
@@ -75,7 +75,7 @@ Essa representação como desvantagem o desperdício de espaço caso o polinômi
        return resultado;
     }
 
-Se eu tenho um polinômio de grau máximo :math:`k`, m termos não nulos, o número de somas é :math:`n` e o tempo para todos as operações de exponenciação é :math:`k`.
+Se eu tenho um polinômio de grau máximo :math:`k`, :math:`m` termos não nulos, o número de somas é :math:`n` e o tempo para todos as operações de exponenciação é :math:`k`.
 
 Na representação por vetor é proporcional ao grau máximo.
 
