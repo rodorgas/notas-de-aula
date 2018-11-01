@@ -14,3 +14,4 @@ MAC 121
    mac121/8-ordenacao.rst
    mac121/9-heap.rst
    mac121/10-lista-ligada.rst
+   mac121/11-arvore.rst
