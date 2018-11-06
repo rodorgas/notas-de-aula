@@ -12,7 +12,6 @@ Notas de Aula
    :glob:
 
    MAC121 - Algoritmos e Estruturas de Dados I <mac121>
-   MAC216 - Técnicas de Programação I <mac216>
 
 * :ref:`search`
 

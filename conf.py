@@ -20,7 +20,6 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Notas de Aula'
-copyright = '2018, Rodrigo Orem'
 author = 'Rodrigo Orem'
 
 # The short X.Y version

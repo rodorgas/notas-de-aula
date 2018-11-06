@@ -357,3 +357,36 @@ Exercícios
             }
         }
     }
+
+Árvores de busca binária
+========================
+
+Uma árvore de busca binária (ABB) é uma árvore binária em que:
+
+- para cada nó, a informação de todo nó na subárvore esquerda é menor que a informação do nó
+- todo nó da subárvore direita é maior.
+
+Uma ABB armazena um conjunto.
+
+::
+
+                 __________43__________
+                /                      \
+           ____37___               _____74___
+          /         \             /          \
+         17         _40         _53_        _84_______
+        /  \       /           /    \      /          \
+       5    32    38         48     59    75_        _110
+                                             \      /
+                                             77_   94
+                                                \
+                                                 81
+
+    in-ordem: 5 17 32 37 38 40 ...
+
+
+Fazer busca, mínimo, insere, remove.
+
+Anexo: arvore-bb.c_
+
+.. _arvore-bb.c: ../_static/arvore-bb.c
