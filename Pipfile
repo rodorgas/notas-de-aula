@@ -10,6 +10,7 @@ sphinx-markdown-tables = "*"
 sphinx-rtd-theme = "*"
 binarytree = "*"
 sphinx-autobuild = "*"
+requests = ">=2.20.0"
 
 [dev-packages]
 
