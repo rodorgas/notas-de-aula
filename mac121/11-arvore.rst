@@ -4,46 +4,58 @@
 
 Árvores são estruturas hierárquicas em que cada elemento (nó) está ligado a um número finito de sub-árvores disjuntas.
 
-.. image:: resources/arvore-exemplo.jpg
+.. figure:: resources/arvore-exemplo.svg
+    :align: center
 
-Os elementos diretamente ligados a um nó são seus filhos. Todo nó, com exceção à raiz da árvore, tem um único pai.
+    Exemplo 1
 
-::
+Os nós sem filhos são chamados de **folhas da árvore**. Todos os nós na árvore enraizada em um elemento são chamados de **descendentes**. No exemplo, os descendentes de G são G, K, N, O e P; as folhas estão sublinhadas.
 
-    B   D  Não é árvore
-     \ /
-      A
+Os elementos diretamente ligados a um nó são seus **filhos**. Todo nó, com exceção à raiz da árvore, tem um único pai.
 
-Os nós sem filhos são chamados de folhas da árvore. Todos os nós na árvore enraizada em um elemento são chamadas de descendentes. Ex: os descendentes de G são: G, K, N, O, P.
+.. figure:: resources/arvore-nao-arvore.svg
+    :align: center
 
-Os ancestrais de um nó são os nós no caminho até a raiz. Ex: acestrais de D são: D, B e A.
+    Não é árvore pois um nó tem dois descendentes
 
-O grau de um nó é o número de filhos. Dizemos que uma árvore é k-ária se todos os nós tem grau <= k.
-A profundidade de um nó é o número de ancestrais próprios que ele tem.
+Os **ancestrais** de um nó são os nós no caminho até a raiz. Ex: ancestrais de D são: D, B e A.
 
-A altura de uma árvore é dada pela profundidade máxima de uma de suas folhas. No exemplo, a altura da árvore é 4.
+O **grau de um nó** é o número de filhos. Dizemos que uma árvore é :math:`k\text{-ária}` se todos os nós tem grau menor ou igual a :math:`k`.
+A **profundidade de um nó** é o número de ancestrais próprios que ele tem.
 
-A árvore vazia tem altura -1.
+A altura de uma árvore é dada pela profundidade máxima de uma de suas folhas. No exemplo 1, a altura da árvore é 4.
 
-A árvore A tem altura zero.
+A árvore vazia tem altura -1. A árvore com apenas um nó tem altura zero.
 
-Uma árvore é ordenada se faz diferença a ordem do filho:
+Uma árvore é ordenada se faz diferença a ordem do filho. Por exemplo, as árvores a seguir são diferentes:
 
-Exemplo:
+.. figure:: resources/arvore-ordenada.svg
+    :align: center
 
-.. image:: resources/arvore-diferente.jpg
+Representação
+=============
+Como representar uma árvore :math:`k\text{-ária}`?
 
-Representação: Como representar uma árvore k-ária?
+-----
+Vetor
+-----
 
-Ideia: Vetor?
+= = = = = = = = = = ===
+A B C ? D E ? F G H ...
+= = = = = = = = = = ===
 
-.. image:: resources/arvore-vetor.jpg
+Problema: gasto de espaço.
 
-Problema: gasto de espaço
+--------
+Ponteiro
+--------
 
-1o. Ideia: usando ponteiro:
+**Primeira ideia**
 
-.. image:: resources/arvore-ponteiro.jpg
+.. figure:: resources/arvore-ponteiro.svg
+    :align: center
+
+    Representação de uma árvore k-ária, k=3
 
 .. code-block:: C
 
@@ -56,10 +68,12 @@ Problema: gasto de espaço
 
 Problema: gasto de espaço.
 
-2a. ideia
+**Segunda ideia**
 
+.. figure:: resources/arvore-ponteiro-2.svg
+    :align: center
 
-.. image:: resources/arvore-ponteiro.jpg
+    Representação eficiente de uma árvore usando ponteiros
 
 .. code-block:: C
 
@@ -193,7 +207,7 @@ Faça uma função que calcula a altura da árvore.
 Percursos
 =========
 
-.. image:: resources/arvore-percursos.jpg
+.. image:: resources/arvore-percursos.svg
 
 ---------------------
 Busca em profundidade
