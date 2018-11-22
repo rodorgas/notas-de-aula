@@ -15,3 +15,4 @@ MAC 121
    mac121/9-heap.rst
    mac121/10-lista-ligada.rst
    mac121/11-arvore.rst
+   mac121/12-hashing.rst
